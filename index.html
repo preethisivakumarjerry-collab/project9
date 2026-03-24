@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to right, #fbc2eb, #fcd5ce);
+    transition: 0.4s;
+}
+
+/* Hero */
+.hero {
+    padding: 100px 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Buttons */
+.btn-custom {
+    border-radius: 25px;
+}
+
+/* Cards */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: #fff;
+    transition: 0.3s;
+}
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* Contact Box */
+.contact-box {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background: white;
+    border-radius: 15px;
+}
+
+/* Toggle Button */
+.toggle-btn{
+    position:fixed;
+    top:20px;
+    right:20px;
+    background:black;
+    color:white;
+    border:none;
+    border-radius:20px;
+    padding:8px 15px;
+    cursor:pointer;
+}
+
+/* DARK MODE */
+.dark-mode{
+    background: #121212;
+    color:white;
+}
+.dark-mode .card{
+    background:#1e1e1e;
+    color:cyan;
+}
+.dark-mode .contact-box{
+    background:white;
+}
+.dark-mode .toggle-btn{
+    background:white;
+    color:cyan;
+}
+</style>
+
+<script>
+
+// Contact Show
+function showContact(){
+document.getElementById("contact").style.display="block";
+}
+
+// Scroll
+function goProjects(){
+document.getElementById("projects").scrollIntoView({behavior:"smooth"});
+}
+
+// Dark Mode Toggle
+function toggleMode(){
+document.body.classList.toggle("dark-mode");
+}
+
+</script>
+
+</head>
+
+<body>
+
+<!-- Toggle -->
+<button class="toggle-btn" onclick="toggleMode()">🌙 Mode</button>
+
+<!-- Hero -->
+<section class="hero">
+    <h1 class="fw-bold display-4">Preethi Siva Kumar</h1>
+    <p class="lead">B.Sc Computer Science Student | Web Developer</p>
+
+    <button class="btn btn-dark btn-custom m-2" onclick="goProjects()">View Projects</button>
+    <button class="btn btn-outline-dark btn-custom m-2" onclick="showContact()">Contact Me</button>
+
+    <!-- Contact -->
+    <div id="contact" class="contact-box">
+        <h5>📞 Contact Details</h5>
+        <p>Email:preethisivakumar@gmail.com</p>
+        <p>Phone: +91 6374443441</p>
+        <p>Location: Tamil Nadu</p>
+    </div>
+</section>
+
+<!-- Cards -->
+<div class="container my-5" id="projects">
+    <div class="row g-4 text-center">
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <h4>Projects</h4>
+                <p>Portfolio Website, Python Programs, Mini Web Apps.</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <h4>Technical Skills</h4>
+                <p> Python, C, C++, HTML, CSS, JavaScript</p>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card p-4 shadow">
+                <h4>Soft Skills</h4>
+                <p>Communication, Teamwork, Problem Solving, Quick Learner </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
+
+
